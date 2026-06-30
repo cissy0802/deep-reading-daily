@@ -16,7 +16,7 @@ Env vars:
 
 Usage:
     pip install beautifulsoup4 requests
-    python3 bake-tts.py                              # all *-dayNN.html
+    python3 bake-tts.py                              # all *-dayNN.html / *-readNN.html
     python3 bake-tts.py decision-making-day01.html   # one page
     python3 bake-tts.py --lang zh                    # only Chinese
     python3 bake-tts.py --dry-run                    # plan, no API calls
@@ -466,7 +466,7 @@ def main():
         files = [Path(f) if Path(f).is_absolute() else REPO_DIR / f for f in args.files]
     else:
         files = sorted(
-            p for p in REPO_DIR.iterdir() if re.match(r".+-day\d+\.html$", p.name)
+            p for p in REPO_DIR.iterdir() if re.match(r".+-(day|read)\d+\.html$", p.name)
         )
 
     for path in files:
