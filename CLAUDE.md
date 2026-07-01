@@ -36,6 +36,7 @@
 ## 3. 文件约定 / 发布（同所有 routine 站）
 - 文件名 `{slug}-read{N}.html` + `{slug}-read{N}.en.html`，放仓库根目录。
 - 发布前更新 `index.html`（在 `<!-- entries -->` 前插入新条目）+ `index.en.html`（插入 `.en` 条目）。
+- **index 条目副标题要短且齐（硬规则）**：书名后 `—` 那句只留**一个最尖的钩子**，中文 ≤ 约 18 字、英文 ≤ 约 12 词，**一句话、不加分号、不塞两层意思**（曾出现「…；…」两段式、越写越长——严禁）。要点留到正文里讲，index 只负责勾人点进来。
 - **不要**手动加 `comments.js` / `search.js` / `index-button.js` / `i18n-tts.js`（GitHub Action 自动注入）；也别在页里硬写 `← Hub`。
 - 用 `./publish.sh` 发布：它自动 add/commit/push 到 `main`，并校验体量、index 引用、div 平衡、重复编号、TOPICS 未被改等。
 - git：`user.name=BigCat` / `user.email=chengchen0802@gmail.com`。
